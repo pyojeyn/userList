@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import classes from './AddUser.module.css';
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
+import Wrapper from "../Helpers/Wrapper";
 
 const AddUser = props => {
     // 배열 구조 분해 //
@@ -48,7 +49,7 @@ const AddUser = props => {
     }
     
     return (
-        <div>
+        <Wrapper>
             {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler}></ErrorModal>}
             <Card cssClass={classes.input}>
                 <form onSubmit={addUserHandler}>
@@ -59,7 +60,7 @@ const AddUser = props => {
                     <Button type="submit">AddUser</Button>
                 </form>
             </Card>
-        </div>
+        </Wrapper>
     )
 }
 
